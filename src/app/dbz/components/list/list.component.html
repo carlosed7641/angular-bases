@@ -1,0 +1,15 @@
+<h4>Listado</h4>
+<ul style="display: flex; flex-direction: column;">
+  <li style="display: flex; justify-content: space-between;" *ngFor="
+    let character of characterList
+    last as isLast
+    index as i
+    "
+    [ngClass]="{
+      'a': isLast,
+      'b': character.power > 9000
+      }">
+      <span>{{ i+1 }}</span> {{character.name}} - Power: {{character.power}}
+     <button class="foo" (click)="onDeleteCharacter(character.id)">Eliminar</button>
+  </li>
+</ul>
